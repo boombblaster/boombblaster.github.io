@@ -191,52 +191,22 @@ nav ul li a {
 /* Service Section */
 #services {
   background-color: var(--secondaryBackgroundColor);
-  padding: 3rem 0; /* Kurangi padding bagian atas dan bawah */
+  padding: var(--sectionPadding);  
 }
 
-.services .pre-title,
-.specialized-in .pre-title {
-  margin: 0 auto 1rem; /* Atur margin bawah */
-  font-size: 1rem; /* Samakan ukuran font */
-  text-transform: uppercase;
-  letter-spacing: .2rem;
+.services .pre-title {
+  margin: 0 auto;  
 }
 
-.services-title,
-.specialized-in-title {
+.services-title {
   text-align: center;
-  margin-bottom: 2rem; /* Atur margin bawah */
-  font-size: 2rem; /* Samakan ukuran font */
-  font-weight: 700;
-}
-
-/* Layout */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
 }
 
 .service {
-  flex: 1 1 calc(33.333% - 2rem); /* Flex basis and gap calculation for 3 items per row */
   padding: 3rem 2rem;
   text-align: center;
   background: var(--primaryBackgroundColor);
   border-radius: var(--itemBorderRadius);
-  box-sizing: border-box;
-}
-
-@media screen and (max-width: 768px) {
-  .service {
-    flex: 1 1 calc(50% - 2rem); /* For 2 items per row on smaller screens */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .service {
-    flex: 1 1 100%; /* For 1 item per row on the smallest screens */
-  }
 }
 
 .service h4 {
@@ -256,261 +226,116 @@ nav ul li a {
 .service-icon svg {
   fill: var(--primaryIconColor);
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-:root {
-  --primaryTextColor: #232e35;
-  --secondaryTextColor: #656d72;
-
-  --borderColor: #f1f1f1;
-  --lineColor: #d9d9d9;
-
-  --primaryBackgroundColor: #fff;
-  --secondaryBackgroundColor: #fbfbfb;
-  --thirdBackgroundColor: #f5f3fe;
-
-  --primaryIconColor: #7e74f1;
-  --primaryIconColorHover: #5d51e8;
-
-  --sectionPadding: 6rem 0;
-
-  --itemBorderRadius: 0.7rem;
+/* Portfolio Section */
+#portfolios {
+  padding: var(--sectionPadding);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.portfolio {
+  border-radius: var(--itemBorderRadius);
+  overflow: hidden;
+  border: 1px solid var(--borderColor);
 }
 
-body {
-  font-family: "Roboto", sans-serif;
+.portfolio-cover {
+  height: 250px;
 }
 
-h1,h2,h3,h4,h5,h6 strong {
-  color: var(--primaryTextColor);
+.portfolio-cover img {
+  object-fit: cover;
 }
 
-p {
-  font-size: 1rem; /* 16px */
-  line-height: 1.9rem;
+.portfolio-info {
+  padding: 2rem 1.5rem;
 }
 
-p, 
-span, 
-label, 
-input, 
-textarea, 
-li {
- color: var(--secondaryTextColor);
+.portfolio-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-a {
-  text-decoration: none;
+.portfolio h4 {
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
-.main-container {
-  width: 1200px;
-  margin: 0 auto;
+.portfolio-title a svg:hover {
+  fill: var(--primaryIconColor);
 }
 
-@media screen and (max-width: 1200px) {
-  .main-container {
-    width: 90%;
-  }  
+.portfolio-title a svg{
+  transition: 0.2s ease-in-out;
 }
 
-/* Buttons */
-.btn {
-  padding: 1rem 1.5rem;
-  background: white;  
-  border: 1.5px solid var(--borderColor);
-  cursor: pointer;
-  transition: .2s ease-in-out;
+.portfolio-tags {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-.btn:hover {
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-}
-
-/* Titles */
-.section-title {
-  margin: 1rem 0 4rem;
-  font-size: 2rem;
-}
-
-.pre-title {
-  text-transform: uppercase;
-  letter-spacing: .5rem;
-  color: var(--secondaryTextColor);
-  position: relative;
-  padding-left: 40px;
-  width: fit-content;
-  font-weight: 400;
+.portfolio-tags div {
   font-size: .9rem;
+  border: 1px solid var(--borderColor);
+  padding: .4rem 1rem;
+  color: var(--secondaryTextColor);
 }
 
-.pre-title::before {
-  content: "";
-  width: 30px;
-  height: 1px;
-  background: var(--lineColor);
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 50%;
+/* Skilss & Education */
+#skills {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
 }
 
-/* Layout */
-.grid-3 {
+.skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
-/* Logo and Navigation Menu  */
-.nav {
+.education {
   display: flex;
-  justify-content: space-between;
-  padding: 2rem 0;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 3rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.logo a {
-  color: var(--primaryTextColor);
-}
-
-nav ul li {
-  display: flex;
-  align-items: center;
-}
-
-nav ul li a {
-  color: var(--primaryTextColor);
-}
-
-/* Burger */
-.burger div {
-  width: 25px;
-  height: 2px;
-  background-color: #000;
-  margin: 7px;
-  transition: all .3s;
-  z-index: 99;
-}
-
-.burger {
-  display: none;
-  z-index: 99;
-  position: fixed;
-  top: 33px;
-  right: 35px;
-}
-
-/* Hero Section */
-#hero {
-  height: 720px;
-  display: grid;  
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.hero-name {
-  font-size: 3rem;
-  font-weight: 700;
-  margin: .5rem 0 1rem;
-}
-
-.hero-name span {
-  color: var(--primaryIconColor);
-}
-
-.hero-right img {
-  width: 90%;
-}
-
-.hero-right {
-  display: flex;
-  justify-content: center;
-}
-
-/* Service Section */
-#services {
-  background-color: var(--secondaryBackgroundColor);
-  padding: 3rem 0; /* Kurangi padding bagian atas dan bawah */
-}
-
-.services .pre-title,
-.specialized-in .pre-title {
-  margin: 0 auto 1rem; /* Atur margin bawah */
-  font-size: 1rem; /* Samakan ukuran font */
-  text-transform: uppercase;
-  letter-spacing: .5rem;
-}
-
-.services-title,
-.specialized-in-title {
-  text-align: center;
-  margin-bottom: 2rem; /* Atur margin bawah */
-  font-size: 2rem; /* Samakan ukuran font */
-  font-weight: 700;
-}
-
-/* Layout */
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   gap: 2rem;
 }
 
-.service {
-  flex: 1 1 calc(33.333% - 2rem); /* Flex basis and gap calculation for 3 items per row */
-  padding: 3rem 2rem;
-  text-align: center;
-  background: var(--primaryBackgroundColor);
-  border-radius: var(--itemBorderRadius);
-  box-sizing: border-box;
+.education .line {
+  padding: 0 .7rem;
 }
 
-@media screen and (max-width: 768px) {
-  .service {
-    flex: 1 1 calc(50% - 2rem); /* For 2 items per row on smaller screens */
-  }
+.education .line div {
+  width: 2px;
+  height: 100%;
+  background: var(--borderColor);
+  position: relative;
 }
 
-@media screen and (max-width: 480px) {
-  .service {
-    flex: 1 1 100%; /* For 1 item per row on the smallest screens */
-  }
+.education-info p {
+  margin: .6rem 0 1.4rem;
 }
 
-.service h4 {
-  margin: 1.5rem 0;
-  font-weight: 500;
-  font-size: 1.05rem;
+.education-years {
+  margin-bottom: 3rem;
 }
 
-.service-icon {
-  background: var(--thirdBackgroundColor); 
-  width: fit-content;
-  margin: 0 auto;
-  padding: 1rem 1.3rem;
-  border-radius: 0.5rem;
+/* TITIK HITAM */
+.education .line div:before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: var(--borderColor);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
 }
 
-.service-icon svg {
-  fill: var(--primaryIconColor);
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.skills-right ul {
+  line-height: 2rem;
+  padding: 0 1rem;
 }
