@@ -18,7 +18,6 @@ window.onbeforeunload = () => {
     }
 };
 
-
 // Bergulir Smooth
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
